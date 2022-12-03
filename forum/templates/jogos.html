@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+  <div class="container mt-3">
+      <h1 style="color: orange">Jogos</h1>
+      <hr>
+      <form method="POST" action="" class="border p-4 mt-2">
+        {{ form.csrf_token }}
+        {% for jogo in jogos %}
+          <div class="row border mt-4 p-3 meupost">
+            <div class="col col-6">
+                <div class="image pe-2"> <img src="{{ jogo.background_image }}" class="rounded" width="400"> </div>
+                <strong>{{ jogo.name }}</strong>
+            </div>
+            <div class="col col-6 form-group">
+                {% if jogo.name in jogos_usuario %}
+                    {{ form.jogo(class="form-check-input", value=jogo.name, checked=True) }}
+                {% else %}
+                    {{ form.jogo(class="form-check-input", value=jogo.name) }}
+                {% endif %}
+                <label class="form-check-label">Marque aqui se você já jogou!</label>
+            </div>
+          </div>
+        {% endfor %}
+        <div class="d-flex justify-content-end mt-2">
+            {{ form.botao_submit_jogo(class="btn btn-primary mt-2") }}
+        </div>
+      </form>
+  </div>
+
+{% endblock %}

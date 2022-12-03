@@ -1,0 +1,36 @@
+.titulo-home {
+    color: orange;
+}
+
+.card {
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff
+}
+
+.card-sobre {
+    width: 800px;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff
+}
+
+.stats {
+    background: #f2f5f8 !important;
+    color: #000 !important
+}
+
+.articles {
+    font-size: 14px;
+    color: #a1aab9
+}
+
+.rating {
+    font-size: 14px;
+    color: #a1aab9
+}
+
+.meupost {
+    background: #f2f5f8 !important;
+}
